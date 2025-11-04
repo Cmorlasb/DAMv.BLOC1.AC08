@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DAMv.BLOC1.AC08-CarlosMorlas/1.0.0": {
+        "runtime": {
+          "DAMv.BLOC1.AC08-CarlosMorlas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DAMv.BLOC1.AC08-CarlosMorlas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
