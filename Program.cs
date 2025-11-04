@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 public class Program
 {
@@ -22,8 +23,16 @@ public class Program
         const string Level30 = "You have obtained the rank: Arka Nullpointer";
         const string LevelMore35 = "You have obtained the rank: Elarion de les Brases";
         const string LevelMore40 = "You have obtained the rank: ITB-Wizard el Gris";
+
         const string MenuOption2 = "2. Check the dungeon";
+        const string DoorContext = "You have a door with a code in front of you.";
+        const string Doors = "What is the code for this door?";
+        const string DoorWrong = "The dragon has detected your presence and has expelled you from the server!";
+        const string DoorGood = "The dragon respects you. You have unlocked the next level!";
+        const string DoorEnd = "You have unlocked the final level. Prepare for battle!";
+
         const string MenuOption3 = "3. Loot the mine";
+
         const string MenuOptionExit = "0. Exit game";
         const string MenuPrompt = "Choose an option (1-3) - (0) to exit: ";
         const string InputErrorMessage = "Invalid input. Please enter a number between 0 and 3.";
@@ -34,10 +43,15 @@ public class Program
         int days = 1;
         int point = 0;
         int points = 0;
+        int i = 0;
+        int code = 0;
+        int codes = 0;
+        int door = 0; 
         string wizard = "";
         bool validInput;
 
-        Random rnd = new Random();
+        Random PointsRandom = new Random();
+        Random CodeRandom = new Random();
 
         do
         {
@@ -80,7 +94,7 @@ public class Program
                 {
                     Console.WriteLine(Hours);
                     hours = Convert.ToInt32(Console.ReadLine());
-                    point = rnd.Next(1, 11);
+                    point = PointsRandom.Next(1, 11);
                     points += point;
 
                     Console.WriteLine(Days, days, wizard, hours, points);
@@ -112,6 +126,33 @@ public class Program
                     Console.WriteLine(PointsMore40);
                     Console.WriteLine(LevelMore40);
                 }
+            }
+
+            else if (op == 2) 
+            {
+                i = 0;
+                door = 0;
+                codes = 0;
+                Console.WriteLine(DoorContext);
+                while (i < 4) 
+                {
+                    while (door < 3) {
+                        codes = CodeRandom.Next(1, 6);
+                        Console.WriteLine(Doors);
+                        code = Convert.ToInt32(Console.ReadLine());
+                        if (code == codes)
+                        {
+                            Console.WriteLine(DoorGood);
+                        }
+                        else
+                        {
+                            Console.WriteLine(DoorWrong);
+                        }
+                        door = door + 1;
+                    }
+                    i = i + 1;
+                }
+                Console.WriteLine(DoorEnd);
             }
         } while (op != 0);
     }
