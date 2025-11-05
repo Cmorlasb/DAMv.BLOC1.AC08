@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DAMv.BLOC1.AC08-CarlosMorlas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bf523c4335f21c33a5caa3d68fde8c9b2f0b2c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("DAMv.BLOC1.AC08-CarlosMorlas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DAMv.BLOC1.AC08-CarlosMorlas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

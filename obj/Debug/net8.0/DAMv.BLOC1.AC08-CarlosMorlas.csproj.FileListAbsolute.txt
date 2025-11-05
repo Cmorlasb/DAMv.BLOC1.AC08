@@ -12,3 +12,4 @@ C:\Users\isard\Desktop\DAMv.BLOC1.AC08-CarlosMorlas\obj\Debug\net8.0\refint\DAMv
 C:\Users\isard\Desktop\DAMv.BLOC1.AC08-CarlosMorlas\obj\Debug\net8.0\DAMv.BLOC1.AC08-CarlosMorlas.pdb
 C:\Users\isard\Desktop\DAMv.BLOC1.AC08-CarlosMorlas\obj\Debug\net8.0\DAMv.BLOC1.AC08-CarlosMorlas.genruntimeconfig.cache
 C:\Users\isard\Desktop\DAMv.BLOC1.AC08-CarlosMorlas\obj\Debug\net8.0\ref\DAMv.BLOC1.AC08-CarlosMorlas.dll
+C:\Users\isard\Desktop\DAMv.BLOC1.AC08-CarlosMorlas\obj\Debug\net8.0\DAMv.BLOC1.AC08-CarlosMorlas.sourcelink.json

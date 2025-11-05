@@ -27,11 +27,20 @@ public class Program
         const string MenuOption2 = "2. Check the dungeon";
         const string DoorContext = "You have a door with a code in front of you.";
         const string Doors = "What is the code for this door?";
+        const string Door = "Door {0}:";
         const string DoorWrong = "The dragon has detected your presence and has expelled you from the server!";
         const string DoorGood = "The dragon respects you. You have unlocked the next level!";
         const string DoorEnd = "You have unlocked the final level. Prepare for battle!";
+        const string DoorBadEnd = "The dragon tree has eaten you without you even noticing.";
 
         const string MenuOption3 = "3. Loot the mine";
+        const string Excavations = "You're in the mine, shall we start mining?";
+        const string NoExvavations = "Aren't you going to dig today? Come on, give it a try.";
+        const string NoCoins = "Today is not your lucky day, you found 0 bits.";
+        const string WinCoins = "You’ve unlocked the gold GPU! Your spells now run at 120 FPS!";
+        const string MinCoins = "Your magic card is still integrated. It's time to defeat another dragon!";
+        const string Bitcoins = "On day {0} you have acquired {1} bitcoins.";
+        const string TotalCoins = "You have a {0} bitcoins.";
 
         const string MenuOptionExit = "0. Exit game";
         const string MenuPrompt = "Choose an option (1-3) - (0) to exit: ";
@@ -46,12 +55,18 @@ public class Program
         int i = 0;
         int code = 0;
         int codes = 0;
-        int door = 0; 
+        int door = 1; 
+        int coin = 0;
+        int coins = 0;
+        int excavations = 1;
+        int prob = 0;
         string wizard = "";
+        string wanna = "";
         bool validInput;
 
         Random PointsRandom = new Random();
         Random CodeRandom = new Random();
+        Random CoinsRandoms = new Random();
 
         do
         {
@@ -128,31 +143,101 @@ public class Program
                 }
             }
 
-            else if (op == 2) 
+            else if (op == 2)
             {
                 i = 0;
-                door = 0;
+                door = 1;
                 codes = 0;
                 Console.WriteLine(DoorContext);
-                while (i < 4) 
+
+                while (door < 4)
                 {
-                    while (door < 3) {
+                    i = 0;
+                    Console.WriteLine(Door, door);
+                    while (i < 3)
+                    {
                         codes = CodeRandom.Next(1, 6);
                         Console.WriteLine(Doors);
                         code = Convert.ToInt32(Console.ReadLine());
+
                         if (code == codes)
                         {
                             Console.WriteLine(DoorGood);
+                            door++;
+                            break;
                         }
                         else
                         {
                             Console.WriteLine(DoorWrong);
+                            i++;
                         }
-                        door = door + 1;
+
+                        if (i == 3)
+                        {
+                            Console.WriteLine(DoorBadEnd);
+                            break;
+                        }
                     }
-                    i = i + 1;
+
+                    if (i == 3)
+                    {
+                        break;
+                    }
                 }
-                Console.WriteLine(DoorEnd);
+
+                if (door == 4 && i < 3)
+                {
+                    Console.WriteLine(DoorEnd);
+                }
+            }
+
+            else if (op == 3)
+            {
+                coins = 0;
+                excavations = 1;
+                Console.WriteLine(Excavations);
+                wanna = Console.ReadLine();
+
+                while (wanna.ToLower() == "no")
+                {
+                    Console.WriteLine(NoExvavations);
+                    Console.WriteLine(Excavations);
+                    wanna = Console.ReadLine();
+                }
+                while (excavations < 6)
+                {
+                    prob = CoinsRandoms.Next(1, 101);
+                    coin = 0;
+
+                    if (prob <= 10)
+                    {
+                        coin = 0;
+                    }
+                    else if (prob <= 85)
+                    {
+                        coin = CoinsRandoms.Next(41, 51);
+                    }
+                    else
+                    {
+                        coin = CoinsRandoms.Next(1, 41);
+                    }
+                    coins += coin;
+                    Console.WriteLine(Bitcoins, excavations, coins);
+                    excavations = excavations + 1;
+                }
+                Console.WriteLine(TotalCoins, coins);
+                if (coins < 200)
+                {
+                    Console.WriteLine(MinCoins);
+                }
+                else if (coins == 0)
+                {
+                    Console.WriteLine(NoCoins);
+                }
+                else
+                {
+                    Console.WriteLine(WinCoins);
+                }
             }
         } while (op != 0);
     }
